@@ -1,13 +1,13 @@
-# Model Creation and Analysis
+# Analysis and Model Creation 
 
 This repository contains the necessary steps to set up the environment, install required packages, and run the scripts for creating and analyzing models using a provided dataset.
 
 ## Installation
 
-### Step 1: Copy the Dataset
+### Step 1: Copy the dataset
 Copy the `dataset_propensity.json` file to the `data` folder.
 
-### Step 2: Create and Activate Conda Environment
+### Step 2: Create and activate conda environment
 Create a new Conda environment with Python 3.10:
 ```sh
 conda create -n nzz python=3.10
