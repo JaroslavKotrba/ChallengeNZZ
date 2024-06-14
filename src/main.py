@@ -278,7 +278,7 @@ sample(pipe, X_test)
 # Model Improvements: ---------------------------------------------------------------------------------------
 
 # Feature Engineering
-# Interaction Features: Create new features by combining existing features. For example, interactions between num_read_articles and time_from_last_session.
+# Create new features by combining existing features. For example, interactions between num_read_articles and time_from_last_session.
 # Extract time-based features such as day of the week, month, or season if applicable.
 
 # Hyperparameter Tuning
