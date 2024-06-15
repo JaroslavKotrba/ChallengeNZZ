@@ -17,14 +17,7 @@ conda activate nzz
 ### Step 3: Install libraries
 Run in activated env
 ```sh
-pip install pandas
-pip install matplotlib
-pip install seaborn
-pip install plotly
-pip install nbformat
-pip install scikit_learn
-pip install xgboost
-pip install shap
+pip install pandas matplotlib seaborn plotly nbformat scikit-learn xgboost shap
 ```
 
 ### Step 4: Create clean dataset
