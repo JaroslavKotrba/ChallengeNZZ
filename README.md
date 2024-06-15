@@ -21,7 +21,7 @@ pip install pandas matplotlib seaborn plotly nbformat scikit-learn xgboost shap
 ```
 
 ### Step 4: Create clean dataset
-Run ../analysis/analysis.py to create clean_data.csv
+Run ../prep/analysis.py to create clean_data.csv
 ```sh
 python analysis.py
 ```

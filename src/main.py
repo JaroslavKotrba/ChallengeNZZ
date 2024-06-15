@@ -8,7 +8,7 @@
 # pip install
 # pandas matplotlib seaborn plotly nbformat scikit-learn xgboost shap
 
-# run ../analysis/analysis.py
+# run ../prep/analysis.py
 # run ../src/main.py
 
 # REQUIREMENTS
