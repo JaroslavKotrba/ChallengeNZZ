@@ -128,21 +128,45 @@ contingency_table(df, "preferredTimeOfDay")
 plot_percentage(df, "preferredTimeOfDay")
 
 ### NUMERICAL
-
-# Correlation
-plt.figure(figsize=(16, 10))
-sns.heatmap(numvars.corr(), cmap="plasma")
-plt.show
+numvars.describe()
 
 
-def plot_distribution(df, column):
+# Correlation heatmap
+def plot_heatmap(numvars):
+    corr_matrix = numvars.corr()
+
+    fig = go.Figure(
+        data=go.Heatmap(
+            z=corr_matrix.values,
+            x=corr_matrix.columns,
+            y=corr_matrix.index,
+            colorscale="plasma",
+        )
+    )
+
+    fig.update_layout(
+        title="Correlation Heatmap",
+        xaxis_nticks=36,
+        width=800,
+        height=600,
+        autosize=False,
+    )
+
+    fig.show()
+
+
+plot_heatmap(numvars)
+
+
+# Distribution plot
+def plot_distribution(df, column, bins=20):
     if column not in df.columns:
         raise KeyError(f"The column '{column}' does not exist in the DataFrame.")
 
     fig = go.Figure(
         data=[
             go.Histogram(
-                x=df[column], nbinsx=20, marker=dict(color="black"), opacity=0.75
+                x=df[column], nbinsx=bins, marker=dict(color="black"), opacity=0.75
             )
         ]
     )
@@ -161,11 +185,15 @@ def plot_distribution(df, column):
 
 # $active_days
 df["active_days"].value_counts()
-plot_distribution(df, "active_days")
+plot_distribution(df, "active_days", 20)
 
 # $clicks_from_newsletters_total
 df["clicks_from_newsletters_total"].value_counts()
 df["clicks_from_newsletters_total"] = df["clicks_from_newsletters_total"].fillna(0)
+plot_distribution(df, "clicks_from_newsletters_total", 20)
+
+# $flagPromotedContent
+df["flagPromotedContent"].value_counts()
 
 
 ### DF FINAL
@@ -196,7 +224,6 @@ df_final = df[
         "flagKolumne",
         "flagKommentar",
         "flagLive",
-        "flagPromotedContent",
         "flagPublireportage",
         "flagQuiz",
         "flagVideo",

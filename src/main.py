@@ -5,13 +5,8 @@
 # conda create -n nzz python=3.10
 # conda env remove --name nzz
 
-# pip install pandas
-# pip isntall matplotlib
-# pip isntall seaborn
-# pip isntall plotly
-# pip install nbformat
-# pip isntall xgboost
-# pip install shap
+# pip install
+# pandas matplotlib seaborn plotly nbformat scikit-learn xgboost shap
 
 # run ../analysis/analysis.py
 # run ../src/main.py
@@ -212,7 +207,6 @@ def sample(pipe, X_test):
             0.0,
             0.0,
             0.0,
-            0.0,
             1.0,
             0.0,
             0,
@@ -283,7 +277,7 @@ sample(pipe, X_test)
 
 # Hyperparameter Tuning
 # Perform extensive hyperparameter tuning using techniques like Grid Search or Random Search with cross-validation.
-# Use other machine learning algorithms like Random Forest, Gradient Boosting Machine (GBM), or CatBoost
+# Use other machine learning algorithms like Random Forest, Gradient Boosting Machine (GBM) like LightGBM or CatBoost
 
 # Feature Selection
 # Remove non-significant variables

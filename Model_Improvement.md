@@ -20,7 +20,7 @@
 ## Hyperparameter Tuning
 
 - Perform extensive hyperparameter tuning using techniques like Grid Search or Random Search with cross-validation.
-- Use other machine learning algorithms like Random Forest, Gradient Boosting Machine (GBM), or CatBoost.
+- Use other machine learning algorithms like Random Forest, Gradient Boosting Machine (GBM) like LightGBM or CatBoost.
 
 ## Feature Selection
 
