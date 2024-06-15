@@ -1,6 +1,7 @@
 # MAIN
 
-# INSTALLATION
+### INSTALLATION
+
 # copy dataset_propensity.json to 'data' folder
 # conda create -n nzz python=3.10
 # conda env remove --name nzz
@@ -11,7 +12,8 @@
 # run ../prep/analysis.py
 # run ../src/main.py
 
-# REQUIREMENTS
+### REQUIREMENTS
+
 # pip freeze > requirements.txt
 
 import numpy as np
@@ -45,6 +47,7 @@ os.getcwd()
 os.listdir()
 
 ### DATA
+
 df = pd.read_csv("../data/data_clean.csv")
 print(df.shape)
 print(df.columns)
@@ -130,12 +133,14 @@ def print_classification_metrics(
 
 
 ### LOGISTIC REGRESSION
+
 log_model = LogisticRegression(class_weight="balanced")
 pipe = print_classification_metrics(
     log_model, column_trans, scaler, X_train, X_test, y_train, y_test
 )
 
 ### XGBOOST CLASSIFICATION
+
 xgb_model = XGBClassifier(
     scale_pos_weight=(len(y_train) - sum(y_train)) / sum(y_train),
     use_label_encoder=False,
@@ -146,6 +151,7 @@ pipe = print_classification_metrics(
 )
 
 ### IMPORTANCE
+
 # Get all features
 xgb_model_trained = pipe.named_steps["xgbclassifier"]
 importances = xgb_model_trained.feature_importances_
@@ -175,6 +181,7 @@ shap.summary_plot(
 joblib.dump(pipe, "../model/model_pipe.pkl")
 
 ### PREDICTION
+
 loaded_pipe = joblib.load("../model/model_pipe.pkl")
 
 

@@ -15,11 +15,13 @@ os.getcwd()
 os.listdir()
 
 ### DATA
+
 data = pd.read_json("../data/dataset_propensity.json")
 print(data.shape)
 print(data.columns)
 
 ### FEATURES
+
 df = data.copy()
 
 # Categorical and Numerical features
@@ -128,6 +130,7 @@ contingency_table(df, "preferredTimeOfDay")
 plot_percentage(df, "preferredTimeOfDay")
 
 ### NUMERICAL
+
 numvars.describe()
 
 
@@ -197,6 +200,7 @@ df["flagPromotedContent"].value_counts()
 
 
 ### DF FINAL
+
 df_final = df[
     [
         "langNew",
@@ -265,4 +269,5 @@ print(df_final.isnull().sum())
 df_final = df_final.dropna()
 
 ### SAVE
+
 df_final.to_csv("../data/data_clean.csv", index=False)
