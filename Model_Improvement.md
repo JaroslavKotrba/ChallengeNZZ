@@ -32,10 +32,10 @@
 ## Final Model Training
 
 - Select Deployment Environment (Heroku, Shiny Server, GCP).
-- Create Virtual Environment.
-- Containerization.
+- Create Virtual Environment and intall python.
+- Containerization with Docker.
 - Create a Web Service Flask/Shiny.
-- Deployment.
+- Deployment of the branch on the server.
 - Configure CI/CD Pipeline GitHub Actions.
 
 # Collaboration Strategies

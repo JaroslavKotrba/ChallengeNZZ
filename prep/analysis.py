@@ -264,8 +264,8 @@ df_final = df[
 ]
 
 # Remove NAs
-df_final[df_final["contentTypeArticles"].isna()]
 print(df_final.isnull().sum())
+df_final[df_final["contentTypeArticles"].isna()]
 df_final = df_final.dropna()
 
 ### SAVE
