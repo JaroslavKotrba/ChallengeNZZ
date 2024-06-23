@@ -131,8 +131,6 @@ plot_percentage(df, "preferredTimeOfDay")
 
 ### NUMERICAL
 
-numvars.describe()
-
 
 # Correlation heatmap
 def plot_heatmap(numvars):
@@ -162,7 +160,7 @@ plot_heatmap(numvars)
 
 
 # Distribution plot
-def plot_distribution(df, column, bins=20):
+def plot_distribution(df, column, bins=50):
     if column not in df.columns:
         raise KeyError(f"The column '{column}' does not exist in the DataFrame.")
 
@@ -186,9 +184,16 @@ def plot_distribution(df, column, bins=20):
     fig.show()
 
 
+numvars.describe()
+
+# Distribution plot for all numeric columns
+# for column in numvars:
+#     plot_distribution(df, column)
+
+
 # $active_days
 df["active_days"].value_counts()
-plot_distribution(df, "active_days", 20)
+plot_distribution(df, "active_days", 50)
 
 # $clicks_from_newsletters_total
 df["clicks_from_newsletters_total"].value_counts()
